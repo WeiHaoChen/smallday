@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B7FDC011C3DB01E0DC641A17 /* libPods-smallday.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9C82026BD6E4F3589D1C1B6 /* libPods-smallday.a */; };
 		E60952C31C1AFA62008948ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60952C21C1AFA62008948ED /* AppDelegate.swift */; };
 		E60952C51C1AFA62008948ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60952C41C1AFA62008948ED /* ViewController.swift */; };
 		E60952C81C1AFA62008948ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E60952C61C1AFA62008948ED /* Main.storyboard */; };
@@ -34,6 +35,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		473A56243AC9C403A9191EF7 /* Pods-smallday.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-smallday.release.xcconfig"; path = "Pods/Target Support Files/Pods-smallday/Pods-smallday.release.xcconfig"; sourceTree = "<group>"; };
+		AD9E32C227DBE2EFC3D1B908 /* Pods-smallday.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-smallday.debug.xcconfig"; path = "Pods/Target Support Files/Pods-smallday/Pods-smallday.debug.xcconfig"; sourceTree = "<group>"; };
+		C9C82026BD6E4F3589D1C1B6 /* libPods-smallday.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-smallday.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E60952BF1C1AFA62008948ED /* smallday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = smallday.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E60952C21C1AFA62008948ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E60952C41C1AFA62008948ED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7FDC011C3DB01E0DC641A17 /* libPods-smallday.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +79,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		17B61F1B7D6B8497C87EB605 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C9C82026BD6E4F3589D1C1B6 /* libPods-smallday.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		346E160118EC6AC2B4D6B135 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AD9E32C227DBE2EFC3D1B908 /* Pods-smallday.debug.xcconfig */,
+				473A56243AC9C403A9191EF7 /* Pods-smallday.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		E60952B61C1AFA62008948ED = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +103,8 @@
 				E60952D61C1AFA62008948ED /* smalldayTests */,
 				E60952E11C1AFA62008948ED /* smalldayUITests */,
 				E60952C01C1AFA62008948ED /* Products */,
+				346E160118EC6AC2B4D6B135 /* Pods */,
+				17B61F1B7D6B8497C87EB605 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,9 +156,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E60952E71C1AFA62008948ED /* Build configuration list for PBXNativeTarget "smallday" */;
 			buildPhases = (
+				0F424C7BA70320EE81C7A326 /* Check Pods Manifest.lock */,
 				E60952BB1C1AFA62008948ED /* Sources */,
 				E60952BC1C1AFA62008948ED /* Frameworks */,
 				E60952BD1C1AFA62008948ED /* Resources */,
+				9213B49C5EC4AA40181DFC5D /* Embed Pods Frameworks */,
+				269096283A892CF2FD720931 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -250,6 +277,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0F424C7BA70320EE81C7A326 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		269096283A892CF2FD720931 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-smallday/Pods-smallday-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9213B49C5EC4AA40181DFC5D /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-smallday/Pods-smallday-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E60952BB1C1AFA62008948ED /* Sources */ = {
@@ -397,6 +472,7 @@
 		};
 		E60952E81C1AFA62008948ED /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD9E32C227DBE2EFC3D1B908 /* Pods-smallday.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = smallday/Info.plist;
@@ -408,6 +484,7 @@
 		};
 		E60952E91C1AFA62008948ED /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 473A56243AC9C403A9191EF7 /* Pods-smallday.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = smallday/Info.plist;
@@ -484,6 +561,7 @@
 				E60952E91C1AFA62008948ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E60952EA1C1AFA62008948ED /* Build configuration list for PBXNativeTarget "smalldayTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +570,7 @@
 				E60952EC1C1AFA62008948ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E60952ED1C1AFA62008948ED /* Build configuration list for PBXNativeTarget "smalldayUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +579,7 @@
 				E60952EF1C1AFA62008948ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
